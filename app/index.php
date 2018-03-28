@@ -1,6 +1,6 @@
 <?php
 
-require dirname(__FILE__).'/../vendor/autoload.php';
+// require dirname(__FILE__).'/../vendor/autoload.php';
 
 
 $body = <<<EOF
@@ -19,5 +19,6 @@ EOF;
 <body>
 <?php print $body;?>
 <hr>
+<a href="sample.php">sample.php</a>
 </body>
 </html>
