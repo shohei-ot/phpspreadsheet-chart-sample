@@ -34,7 +34,7 @@ $data = [
 $sheet->fromArray($data, null, 'A5', true);
 
 $writer = new Xlsx($spreadsheet);
-$xlsFileName = 'test.xlsx';
+$xlsFileName = 'test_01.xlsx';
 $filePath = $tmpPath.'/'.$xlsFileName;
 
 try{
