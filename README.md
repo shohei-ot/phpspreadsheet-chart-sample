@@ -20,6 +20,7 @@ npm run check
 ```
 
 ![OK](./static/yarn_run_check.png)
+
 全て `passed` ならOK。だめだったら homebrew とかでインストールしてください。
 
 ## サーバー起動
