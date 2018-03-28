@@ -1,7 +1,7 @@
-phpexcel-chart-sample
-=======================
+phpspreadsheet-chart-sample
+============================
 
-PHPSpreadsheetを使ったグラフの作成テスト。
+PHPSpreadsheet (PHPExcelではない) を使ったグラフの作成テスト。
 
 ## 初期化
 
