@@ -7,5 +7,9 @@
   "scripts": {
     "serve": "php -S localhost:8889 -t app",
     "check": "php ./vendor/phpoffice/phpspreadsheet/samples/index.php "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shohei-ot/phpspreadsheet-chart-sample"
   }
 }
