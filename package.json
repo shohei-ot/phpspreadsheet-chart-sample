@@ -1,0 +1,11 @@
+{
+  "name": "phpexcel-chart-sample",
+  "version": "0.0.0",
+  "main": "index.php",
+  "author": "shohei-ot",
+  "license": "MIT",
+  "scripts": {
+    "serve": "php -S localhost:8889 -t app",
+    "check": "php ./vendor/phpoffice/phpspreadsheet/samples/index.php "
+  }
+}
