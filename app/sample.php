@@ -79,10 +79,40 @@ $worksheet->addChart($chart);
 $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
 $writer->setIncludeCharts(TRUE);
 $tmpPath = __DIR__.'/tmp';
-$filePath = $tmpPath.'/chart_test.xlsx';
+$filename = 'chart_test.xlsx';
+$filePath = $tmpPath.'/'.$filename;
 if(file_exists($filePath)){
-  unlink($filePath);
+    unlink($filePath);
 }
 $writer->setPreCalculateFormulas(false);
 $writer->save($filePath);
-echo 'done';
+// echo 'done';
+try{
+$src = fopen($filePath, 'r');
+
+header('Content-disposition: attachment; filename='.$filename);
+header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+// header('Content-Length: '.$size);
+header('Content-Transfer-Encoding: binary');
+header('Cache-Control: must-revalidate');
+header('Pragma: public');
+
+ob_start();
+
+while(!feof($src)){
+    echo fread($src, 1024);
+}
+
+fclose($src);
+ob_end_flush();
+
+}catch(\Exception $e){
+    if(isset($src)){
+        fclose($src);
+    }
+    ob_end_clean();
+    echo "failed download processing";
+    echo "<hr>";
+    echo $e->getMessage();
+    exit;
+}
